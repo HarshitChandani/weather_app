@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+.App{
+   padding:5%;
+   color:white !important;
+}
+.container_1{
+   border-radius:5px;
+   margin:0 auto; 
+   box-shadow: 0px 0px 6px 8px #d1dee9;
+   display:flex;
+   flex-direction:column;
+   padding:6px 10px;
+   width:35%;
+   /* background-image: linear-gradient(359deg, #c4a2a6, #6d8ccd); */
+   background-size:cover;
+}
+.weather-block-1{
+   display: flex;
+   flex-direction: column;
+   height:65%;
+   padding:5%;
+}
+.weather-block-2{
+   height:35%;
+   padding: 10px;
+   display:flex;
+   flex-direction:row;
+}
+.weather-block-2-col-1{
+   height:100%;
+   width:30%;
+}
+.weather-block-2-col-2{
+   height:100%;
+   width:40%;
+   text-align: center;   
+   font-size: large;
+}
+.weather-block-2-col-3{
+   height:100%;
+   width:40%;
+   text-align: right;
+   
+}
+.weather-block-1 > .city-name , .city-temp , .city-weather{
+   font-size: 28px;
+   line-height: 38px;
+   font-weight: bolder;
+   letter-spacing: 1px;
+   text-shadow: 1px 2px 3px black;
+   padding: 15px;
+   text-align: center;
+}
+.weather-block-1 > .city-temp{
+   line-height: 50px;
+   font-size: xxx-large;
+   font-weight:200 !important;
+   display:flex;
+   flex-direction:row;
+   justify-content: space-around;
+   text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.city-weather{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   align-items: flex-end;
+   padding:0
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-name{
+   width:70%;
+   text-align:left
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.weather-icon{
+   width:30%;
+   padding-top:20px;
+   text-align:right
 }
-
-.App-link {
-  color: #61dafb;
+/* .weather-icon{
+   padding: 20px;
+   margin: 5px;
+} */
+.temp-type{
+   font-size: 40px;
+    vertical-align: super;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.city-temp > .max_min{
+   font-size: 12px;
+   line-height: 1.5;
+   padding: 5px 0;
+   align-self: flex-end;
+}
+.icon-align-justify{
+   color: white !important;
 }
