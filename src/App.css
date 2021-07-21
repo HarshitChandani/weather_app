@@ -1,5 +1,4 @@
 .App{
-   padding:5%;
    color:white !important;
 }
 .container_1{
@@ -33,7 +32,7 @@
    height:100%;
    width:40%;
    text-align: center;   
-   font-size: large;
+   font-size: calc(0.75em + 1vmin);
 }
 .weather-block-2-col-3{
    height:100%;
@@ -42,7 +41,7 @@
    
 }
 .weather-block-1 > .city-name , .city-temp , .city-weather{
-   font-size: 28px;
+   font-size: calc(1.5em + 1vmin);
    line-height: 38px;
    font-weight: bolder;
    letter-spacing: 1px;
@@ -61,6 +60,7 @@
 }
 
 .city-weather{
+   margin-top: 15px;
    display: flex;
    flex-direction: row;
    justify-content: space-evenly;
@@ -69,18 +69,14 @@
    padding:0
 }
 .weather-name{
-   width:70%;
+   width:50%;
    text-align:left
 }
 .weather-icon{
-   width:30%;
+   width:50%;
    padding-top:20px;
    text-align:right
 }
-/* .weather-icon{
-   padding: 20px;
-   margin: 5px;
-} */
 .temp-type{
    font-size: 40px;
     vertical-align: super;

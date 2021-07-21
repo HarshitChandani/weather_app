@@ -1,9 +1,12 @@
 import {Header,Icon} from 'semantic-ui-react'
+import Container from 'react-bootstrap/Container'
+import {Row,Col} from 'react-bootstrap'
 import GetWeatherIcon from './controls/helpers'
 import './App.css'
 const App = (props) => {
   return (
-    <div className="App">
+    <Container className="App w-50 p-5">
+      <Row>
       <div className="container_1" style={props.current.background}>
           <div className="weather-block-2">
             <div className="weather-block-2-col-1">
@@ -12,7 +15,8 @@ const App = (props) => {
               </Header>
             </div>
             <div className="weather-block-2-col-2">
-              {props.current.city},&nbsp;{props.current.country}
+              <div><b>{props.current.city},&nbsp;{props.current.country}</b></div><hr/>
+              <div>Updated At {props.current.date_time.Time}</div>
             </div>
             <div className="weather-block-2-col-3">
               <Header as ="h3">
@@ -21,11 +25,13 @@ const App = (props) => {
             </div>
           </div>
           <div className="city-weather">
-          <div className="weather-icon">
+            <div className="weather-icon">
                 <GetWeatherIcon main={props.current.weather_main}/>
-              </div>
-              <div className="weather-name">{props.current.weather_name}</div>
             </div>
+            <div className="weather-name">
+              {props.current.weather_name}
+            </div>
+          </div>
           <div className="weather-block-1">
             <div className="city-temp">
               <div className="temperature">
@@ -41,7 +47,8 @@ const App = (props) => {
             </div>
           </div>
       </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
 

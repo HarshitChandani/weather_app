@@ -22,37 +22,50 @@ export const getFullCountryName = (countryShortName) =>{
    }
 } 
 
+export const getCurrentDate_time = () =>{
+   const Date_and_time = {}
+   const currentDate = new Date()
+   Date_and_time["Date"] = currentDate.getDate()
+   Date_and_time["Month"] = currentDate.getMonth()
+   Date_and_time["Year"] = currentDate.getFullYear()
+   Date_and_time["Time"] = currentDate.toLocaleTimeString()
+   return Date_and_time;
+}
 
 export default class GetWeatherIcon extends React.Component{
    render(){
+      const ImgStyle = {
+         opacity:'.9',
+         width:'60px'
+      }
       if(this.props.main === "Clouds"){
          return (
-            <Image src={Clouds} size="small" centered style={{opacity:'.9',width:'50px'}}/>   
+            <Image src={Clouds} size="small" centered style={ImgStyle}/>   
          )
       }
       else if(this.props.main === "Rain"){
          return (
-            <Image src={Rain} size="small" centered style={{opacity:'.9',width:'50px'}}/>   
+            <Image src={Rain} size="small" centered style={ImgStyle}/>   
          )
       }
       else if(this.props.main === "Clear"){
          return(
-            <Image src={Clear} size="small" centered style={{opacity:'.9',width:'50px'}}/>
+            <Image src={Clear} size="small" centered style={ImgStyle}/>
          )
       }
       else if(this.props.main === "Hot"){
          return (
-            <Image src={Hot} size="small" centered style={{opacity:'.9',width:'50px'}}/>   
+            <Image src={Hot} size="small" centered style={ImgStyle}/>   
          )
       }
       else if(this.props.main === "Thunderstorm"){
          return (
-            <Image src={Storm} size="small"  style={{opacity:'.9',width:'50px'}}/>   
+            <Image src={Storm} size="small"  style={ImgStyle}/>   
          )
       }
       else if(this.props.main === "Haze"){
          return (
-            <Image src={Haze} size="small"  centered style={{opacity:'.9',width:'50px'}}/>   
+            <Image src={Haze} size="small"  centered style={ImgStyle}/>   
          )
       }
    }
@@ -99,6 +112,7 @@ export const TodaysWeather = (props) => {
    currentWeather["weather_name"] = description
    currentWeather["weather_main"] = main
    currentWeather["background"] = getWeatherColor(main)
+   currentWeather["date_time"] = getCurrentDate_time()
    console.info('Current Weather',currentWeather);
    return (
       <App current = {currentWeather}/>
